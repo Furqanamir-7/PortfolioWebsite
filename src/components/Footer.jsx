@@ -1,4 +1,4 @@
-import { Github, Instagram, Linkedin } from 'lucide-react'
+import { Github } from 'lucide-react'
 import { site } from '../config/site.js'
 
 const links = [
@@ -9,12 +9,6 @@ const links = [
   { href: '#projects', label: 'Projects' },
   { href: '#branding', label: 'Branding' },
   { href: '#contact', label: 'Contact' },
-]
-
-const socials = [
-  { Icon: Github, href: site.social.github, label: 'GitHub' },
-  { Icon: Linkedin, href: site.social.linkedin, label: 'LinkedIn' },
-  { Icon: Instagram, href: site.social.instagram, label: 'Instagram' },
 ]
 
 export function Footer() {
@@ -37,20 +31,15 @@ export function Footer() {
             </a>
           ))}
         </nav>
-        <div className="flex gap-3">
-          {socials.map(({ Icon, href, label }) => (
-            <a
-              key={href}
-              href={href}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label={label}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-border-glass bg-bg-card/60 text-content-muted hover:border-accent-glow/50 hover:text-accent-neon"
-            >
-              <Icon size={18} />
-            </a>
-          ))}
-        </div>
+        <a
+          href={site.github}
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="GitHub"
+          className="flex h-10 w-10 items-center justify-center rounded-xl border border-border-glass bg-bg-card/60 text-content-muted hover:border-accent-glow/50 hover:text-accent-neon"
+        >
+          <Github size={18} />
+        </a>
       </div>
       <div className="mx-auto mt-10 max-w-6xl border-t border-border-glass/60 px-4 pt-6 text-center text-xs text-content-muted sm:px-6 lg:px-8">
         <p className="gradient-text font-medium">

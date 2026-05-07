@@ -1,15 +1,9 @@
 import { useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Github, Instagram, Linkedin, Loader2, Mail, MapPin } from 'lucide-react'
-import { site } from '../config/site.js'
+import { Github, Loader2, Mail, Phone } from 'lucide-react'
+import { site, whatsappChatUrl } from '../config/site.js'
 import { SectionLabel } from './ui/SectionLabel.jsx'
 import { GlowButton } from './ui/GlowButton.jsx'
-
-const socials = [
-  { Icon: Github, href: site.social.github, label: 'GitHub' },
-  { Icon: Linkedin, href: site.social.linkedin, label: 'LinkedIn' },
-  { Icon: Instagram, href: site.social.instagram, label: 'Instagram' },
-]
 
 export function Contact() {
   const formRef = useRef(null)
@@ -72,30 +66,40 @@ export function Contact() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 text-accent-neon" size={20} />
+              <Phone className="mt-0.5 text-accent-neon" size={20} />
               <div>
-                <p className="text-xs uppercase tracking-widest text-content-muted">Location</p>
-                <p className="text-lg text-content-primary">{site.location}</p>
+                <p className="text-xs uppercase tracking-widest text-content-muted">Phone &amp; WhatsApp</p>
+                <a
+                  href={`tel:${site.phoneTel}`}
+                  className="block text-lg text-content-primary hover:text-accent-neon"
+                >
+                  {site.phoneDisplay}
+                </a>
+                <a
+                  href={whatsappChatUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="mt-1 inline-block text-sm font-medium text-[#25d366] hover:underline"
+                >
+                  Message on WhatsApp →
+                </a>
               </div>
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-200">
               <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
               Open for opportunities
             </div>
-            <div className="flex gap-3 pt-4">
-              {socials.map(({ Icon, href, label }) => (
-                <motion.a
-                  key={href}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label={label}
-                  whileHover={{ y: -3 }}
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-border-glass bg-bg-card/60 text-content-muted hover:border-accent-glow/50 hover:text-accent-neon"
-                >
-                  <Icon size={20} />
-                </motion.a>
-              ))}
+            <div className="pt-2">
+              <motion.a
+                href={site.github}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="GitHub"
+                whileHover={{ y: -3 }}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border-glass bg-bg-card/60 text-content-muted hover:border-accent-glow/50 hover:text-accent-neon"
+              >
+                <Github size={20} />
+              </motion.a>
             </div>
           </div>
 

@@ -22,7 +22,7 @@ export function Branding() {
           Creative work that speaks.
         </h2>
         <p className="mt-3 max-w-2xl text-content-muted">
-          Instagram posts, brand kits, and social media creatives — engineered for consistency and
+          Social posts, brand kits, and campaign creatives — engineered for consistency and
           impact.
         </p>
 

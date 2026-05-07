@@ -21,7 +21,7 @@ line('Furqan Amir', 22, bold)
 line('Full Stack Developer · Shopify · WordPress · Branding', 11)
 y -= 10
 line('Replace this PDF with your final CV export.', 10)
-line('Email: hello@furqanamir.dev · Location: Pakistan', 10)
+line('Email: furqanamir2705@gmail.com · Phone / WhatsApp: +92 326 2803870', 10)
 y -= 16
 line('Summary', 13, bold)
 line(
