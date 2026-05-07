@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+npm run sync-portfolio
+git add "Portfolio Website" 2>/dev/null || true

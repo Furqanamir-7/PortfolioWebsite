@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "node scripts/vercel-deploy.mjs",
+    "sync-portfolio": "node scripts/sync-portfolio-website.mjs",
     "prepare": "husky"
   },
   "dependencies": {
