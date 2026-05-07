@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowDown, Github, Instagram, Linkedin } from 'lucide-react'
+import { site } from '../config/site.js'
 import { GlowButton } from './ui/GlowButton.jsx'
 
 const codeLines = [
@@ -26,6 +27,12 @@ const item = {
     transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   },
 }
+
+const socials = [
+  { Icon: Github, href: site.social.github, label: 'GitHub' },
+  { Icon: Linkedin, href: site.social.linkedin, label: 'LinkedIn' },
+  { Icon: Instagram, href: site.social.instagram, label: 'Instagram' },
+]
 
 export function Hero() {
   return (
@@ -79,22 +86,19 @@ export function Hero() {
             <GlowButton onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
               View My Work
             </GlowButton>
-            <GlowButton variant="outline" type="button">
+            <GlowButton variant="outline" href={site.cvPath} download="Furqan-Amir-CV.pdf">
               Download CV
             </GlowButton>
           </motion.div>
 
           <motion.div variants={item} className="flex gap-4 pt-2">
-            {[
-              { Icon: Github, href: 'https://github.com' },
-              { Icon: Linkedin, href: 'https://linkedin.com' },
-              { Icon: Instagram, href: 'https://instagram.com' },
-            ].map(({ Icon, href }) => (
+            {socials.map(({ Icon, href, label }) => (
               <motion.a
                 key={href}
                 href={href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
+                aria-label={label}
                 whileHover={{ y: -3, scale: 1.05 }}
                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-border-glass bg-bg-card/60 text-content-muted transition-colors hover:border-accent-glow/50 hover:text-accent-neon hover:shadow-glow-sm"
               >

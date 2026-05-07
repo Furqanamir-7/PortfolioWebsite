@@ -1,3 +1,7 @@
+const publicSite =
+  (typeof import.meta !== 'undefined' && import.meta.env?.VITE_PUBLIC_SITE_URL) ||
+  'https://furqan-portfolio-two.vercel.app'
+
 export const projectCategories = ['All', 'Web Apps', 'Shopify', 'WordPress', 'Branding']
 
 export const projects = [
@@ -9,6 +13,8 @@ export const projects = [
     category: 'Web Apps',
     tags: ['React', 'Next.js', 'Tailwind'],
     gradient: 'from-violet-600 via-fuchsia-600 to-indigo-900',
+    liveUrl: publicSite,
+    repoUrl: 'https://github.com/furqanamir/furqan-portfolio',
   },
   {
     id: 'shopease',
@@ -18,6 +24,8 @@ export const projects = [
     category: 'Shopify',
     tags: ['Shopify', 'Liquid', 'JavaScript'],
     gradient: 'from-emerald-600 via-teal-700 to-slate-900',
+    liveUrl: 'https://themes.shopify.com',
+    repoUrl: 'https://github.com/furqanamir/shopease',
   },
   {
     id: 'blogpress',
@@ -27,6 +35,8 @@ export const projects = [
     category: 'WordPress',
     tags: ['WordPress', 'PHP', 'Elementor'],
     gradient: 'from-sky-600 via-blue-800 to-slate-950',
+    liveUrl: 'https://wordpress.org/themes/',
+    repoUrl: 'https://github.com/furqanamir/blogpress',
   },
   {
     id: 'brandkit',
@@ -36,5 +46,7 @@ export const projects = [
     category: 'Branding',
     tags: ['Figma', 'Illustrator'],
     gradient: 'from-amber-500 via-orange-600 to-rose-900',
+    liveUrl: 'https://www.behance.net',
+    repoUrl: 'https://github.com/furqanamir/brandkit',
   },
 ]

@@ -9,6 +9,10 @@ export function GlowButton({
   className = '',
   type = 'button',
   disabled = false,
+  href,
+  download,
+  target,
+  rel,
   ...rest
 }) {
   const variants = {
@@ -16,16 +20,41 @@ export function GlowButton({
     outline: `${base} border border-border-glass bg-bg-card/60 text-content-primary backdrop-blur-xl hover:bg-accent-primary/10 hover:border-accent-glow/40 hover:shadow-glow-sm`,
   }
 
+  const motionProps = {
+    whileHover: disabled ? undefined : { scale: 1.02 },
+    whileTap: disabled ? undefined : { scale: 0.98 },
+    transition: { type: 'spring', stiffness: 400, damping: 22 },
+    className: `${variants[variant]} ${disabled ? 'cursor-not-allowed opacity-60' : ''} ${className}`,
+    ...rest,
+  }
+
+  if (href) {
+    const resolvedTarget =
+      target !== undefined
+        ? target
+        : download
+          ? undefined
+          : typeof href === 'string' && /^https?:\/\//i.test(href)
+            ? '_blank'
+            : undefined
+    const resolvedRel =
+      rel !== undefined ? rel : resolvedTarget === '_blank' ? 'noreferrer noopener' : undefined
+
+    return (
+      <motion.a
+        href={href}
+        download={download}
+        target={resolvedTarget}
+        rel={resolvedRel}
+        {...motionProps}
+      >
+        {children}
+      </motion.a>
+    )
+  }
+
   return (
-    <motion.button
-      type={type}
-      disabled={disabled}
-      whileHover={disabled ? undefined : { scale: 1.02 }}
-      whileTap={disabled ? undefined : { scale: 0.98 }}
-      transition={{ type: 'spring', stiffness: 400, damping: 22 }}
-      className={`${variants[variant]} ${disabled ? 'cursor-not-allowed opacity-60' : ''} ${className}`}
-      {...rest}
-    >
+    <motion.button type={type} disabled={disabled} {...motionProps}>
       {children}
     </motion.button>
   )

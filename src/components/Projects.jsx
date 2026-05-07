@@ -87,18 +87,13 @@ export function Projects() {
                     </h3>
                     <p className="text-sm text-content-muted">{project.description}</p>
                     <div className="flex flex-wrap gap-3 pt-2">
-                      <GlowButton type="button" className="!text-xs">
+                      <GlowButton href={project.liveUrl} className="!text-xs">
                         Live Demo
                       </GlowButton>
-                      <motion.button
-                        type="button"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="inline-flex items-center gap-2 rounded-full border border-border-glass bg-transparent px-5 py-2 text-xs font-semibold uppercase tracking-widest text-content-primary hover:border-accent-glow/50 hover:bg-accent-primary/5"
-                      >
+                      <GlowButton variant="outline" href={project.repoUrl} className="!text-xs !inline-flex !items-center !gap-2">
                         <Github size={16} />
                         GitHub
-                      </motion.button>
+                      </GlowButton>
                     </div>
                   </div>
                 </motion.article>
