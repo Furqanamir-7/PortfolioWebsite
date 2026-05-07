@@ -55,14 +55,21 @@ export function Projects() {
               transition={{ duration: 0.35 }}
               className="grid gap-8 lg:grid-cols-2"
             >
-              {filtered.map((project) => (
+              {filtered.map((project, index) => {
+                const centerLastSolo =
+                  filtered.length % 2 === 1 && index === filtered.length - 1
+                return (
                 <motion.article
                   key={project.id}
                   layout
                   whileHover={{ y: -6 }}
-                  className="group relative overflow-hidden rounded-3xl border border-border-glass bg-bg-secondary/60 shadow-card backdrop-blur-xl"
+                  className={`group relative overflow-hidden rounded-3xl border border-border-glass bg-bg-secondary/60 shadow-card backdrop-blur-xl ${
+                    centerLastSolo
+                      ? 'lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-[calc(50%-1rem)]'
+                      : ''
+                  }`}
                 >
-                  <div className="relative h-48 overflow-hidden sm:h-56">
+                  <div className="relative flex h-52 items-center justify-center overflow-hidden px-3 py-4 sm:h-64">
                     <div
                       aria-hidden
                       className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`}
@@ -71,7 +78,7 @@ export function Projects() {
                       <img
                         src={project.image}
                         alt=""
-                        className="absolute inset-0 z-[1] h-full w-full object-cover object-top"
+                        className="relative z-[1] h-full w-full max-h-[13.5rem] object-contain object-center sm:max-h-[15.5rem]"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none'
                         }}
@@ -111,7 +118,8 @@ export function Projects() {
                     </div>
                   </div>
                 </motion.article>
-              ))}
+                )
+              })}
             </motion.div>
           </AnimatePresence>
         </div>
