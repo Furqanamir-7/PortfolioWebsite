@@ -7,10 +7,10 @@ import { GlowButton } from './ui/GlowButton.jsx'
 import { GlassCard } from './ui/GlassCard.jsx'
 
 const stats = [
-  { label: 'Years Experience', value: 2, suffix: '+' },
-  { label: 'Projects Completed', value: 25, suffix: '+' },
-  { label: 'Happy Clients', value: 10, suffix: '+' },
-  { label: 'Lines of Code', value: 5, suffix: 'k+' },
+  { label: 'Years Experience', value: 1, suffix: '+' },
+  { label: 'Projects Completed', value: 5, suffix: '+' },
+  { label: 'Branding Projects', value: 2, suffix: '+' },
+  { label: 'Happy Clients', value: 6, suffix: '+' },
 ]
 
 function StatCard({ label, value, suffix }) {
@@ -66,7 +66,7 @@ export function About() {
               product story.
             </p>
             <p className="text-content-muted">
-              With two years in the field, I&apos;ve shipped production sites, ecommerce flows,
+              With a year in the field, I&apos;ve shipped production sites, ecommerce flows,
               and design systems for teams who care about craft.
             </p>
             <GlowButton
