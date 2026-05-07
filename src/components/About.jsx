@@ -11,6 +11,9 @@ const stats = [
   { label: 'Projects Completed', value: 5, suffix: '+' },
   { label: 'Branding Projects', value: 2, suffix: '+' },
   { label: 'Happy Clients', value: 6, suffix: '+' },
+  { label: 'Technologies', value: 10, suffix: '+' },
+  { label: 'E-commerce builds', value: 4, suffix: '+' },
+  { label: 'Industries served', value: 4, suffix: '+' },
 ]
 
 function StatCard({ label, value, suffix }) {
@@ -131,10 +134,17 @@ export function About() {
           </div>
         </motion.div>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((s) => (
-            <StatCard key={s.label} {...s} />
-          ))}
+        <div className="mt-16 space-y-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.slice(0, 4).map((s) => (
+              <StatCard key={s.label} {...s} />
+            ))}
+          </div>
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
+            {stats.slice(4).map((s) => (
+              <StatCard key={s.label} {...s} />
+            ))}
+          </div>
         </div>
       </div>
     </motion.section>
