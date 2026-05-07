@@ -4,7 +4,8 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const out = join(__dirname, '..', 'public', 'Furqan-Amir-CV.pdf')
+/** Optional: `npm run generate-cv` writes a tiny sample PDF — does not replace Furqan-Amir-Resume.pdf */
+const out = join(__dirname, '..', 'public', 'generated-cv-sample.pdf')
 
 const doc = await PDFDocument.create()
 const page = doc.addPage([595.28, 841.89])

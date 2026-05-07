@@ -1,52 +1,60 @@
-const publicSite =
-  (typeof import.meta !== 'undefined' && import.meta.env?.VITE_PUBLIC_SITE_URL) ||
-  'https://furqan-portfolio-two.vercel.app'
-
-export const projectCategories = ['All', 'Web Apps', 'Shopify', 'WordPress', 'Branding']
+/** Filter tabs — only categories used below need to appear in the UI. */
+export const projectCategories = ['All', 'Web Apps']
 
 export const projects = [
   {
-    id: 'devportfolio',
-    title: 'DevPortfolio',
+    id: 'bullsfc',
+    title: 'Bulls FC',
     description:
-      'A cinematic personal portfolio with glass UI, motion design, and a developer-first aesthetic.',
+      'Club website with fixtures, news, and a polished fan-facing experience for a football organization.',
     category: 'Web Apps',
-    tags: ['React', 'Next.js', 'Tailwind'],
-    gradient: 'from-violet-600 via-fuchsia-600 to-indigo-900',
-    liveUrl: publicSite,
-    repoUrl: 'https://github.com/Furqanamir-7/PortfolioWebsite',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    gradient: 'from-red-900 via-rose-800 to-slate-950',
+    liveUrl: 'https://www.bullsfc.site/',
+    repoUrl: 'https://github.com/Furqanamir-7',
   },
   {
-    id: 'shopease',
-    title: 'ShopEase',
+    id: 'tadarch',
+    title: 'Tadarch',
     description:
-      'Custom Shopify theme with advanced collection filtering, quick view, and conversion-focused UX.',
-    category: 'Shopify',
-    tags: ['Shopify', 'Liquid', 'JavaScript'],
-    gradient: 'from-emerald-600 via-teal-700 to-slate-900',
-    liveUrl: 'https://themes.shopify.com',
-    repoUrl: 'https://github.com/furqanamir/shopease',
+      'Architecture practice site showcasing projects, services, and studio identity with a clean editorial layout.',
+    category: 'Web Apps',
+    tags: ['React', 'Tailwind', 'Vite'],
+    gradient: 'from-stone-700 via-neutral-800 to-zinc-950',
+    liveUrl: 'https://www.tadarch.co/',
+    repoUrl: 'https://github.com/Furqanamir-7',
   },
   {
-    id: 'blogpress',
-    title: 'BlogPress',
+    id: 'saagar-foundation',
+    title: 'Saagar Foundation',
     description:
-      'Editorial WordPress theme with modular blocks and Elementor-ready sections for publishers.',
-    category: 'WordPress',
-    tags: ['WordPress', 'PHP', 'Elementor'],
-    gradient: 'from-sky-600 via-blue-800 to-slate-950',
-    liveUrl: 'https://wordpress.org/themes/',
-    repoUrl: 'https://github.com/furqanamir/blogpress',
+      'Nonprofit foundation site highlighting mission, programs, and ways to support the community.',
+    category: 'Web Apps',
+    tags: ['React', 'Next.js', 'Vercel'],
+    gradient: 'from-teal-800 via-cyan-900 to-slate-950',
+    liveUrl: 'https://saagar-foundation-website.vercel.app/',
+    repoUrl: 'https://github.com/Furqanamir-7',
   },
   {
-    id: 'brandkit',
-    title: 'BrandKit',
+    id: 'equestrian-talent',
+    title: 'Equestrian Talent',
     description:
-      'Full brand identity and social media creative system for a modern lifestyle brand launch.',
-    category: 'Branding',
-    tags: ['Figma', 'Illustrator'],
-    gradient: 'from-amber-500 via-orange-600 to-rose-900',
-    liveUrl: 'https://www.behance.net',
-    repoUrl: 'https://github.com/furqanamir/brandkit',
+      'Equestrian industry platform for talent, listings, and brand presence with a refined visual system.',
+    category: 'Web Apps',
+    tags: ['WordPress', 'PHP', 'CSS'],
+    gradient: 'from-amber-900 via-yellow-900/80 to-stone-950',
+    liveUrl: 'https://equestrian-talent.com/',
+    repoUrl: 'https://github.com/Furqanamir-7',
+  },
+  {
+    id: 'studentnest',
+    title: 'Student Nest',
+    description:
+      'Student-focused web experience for housing or campus services with clear navigation and conversion paths.',
+    category: 'Web Apps',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    gradient: 'from-indigo-800 via-violet-900 to-slate-950',
+    liveUrl: 'https://www.studentnest.site/',
+    repoUrl: 'https://github.com/Furqanamir-7',
   },
 ]

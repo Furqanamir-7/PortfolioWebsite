@@ -9,8 +9,8 @@ export const site = {
   /** Digits only, country code included (no +) — wa.me format */
   whatsappDigits: '923262803870',
   github: 'https://github.com/Furqanamir-7/PortfolioWebsite',
-  /** Served from /public — regenerate with `npm run generate-cv` */
-  cvPath: '/Furqan-Amir-CV.pdf',
+  /** Served from /public — your PDF resume */
+  cvPath: '/Furqan-Amir-Resume.pdf',
 }
 
 export const whatsappChatUrl = `https://wa.me/${site.whatsappDigits}`

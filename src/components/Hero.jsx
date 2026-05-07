@@ -77,7 +77,7 @@ export function Hero() {
             <GlowButton onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
               View My Work
             </GlowButton>
-            <GlowButton variant="outline" href={site.cvPath} download="Furqan-Amir-CV.pdf">
+            <GlowButton variant="outline" href={site.cvPath} download="Furqan-Amir-Resume.pdf">
               Download CV
             </GlowButton>
           </motion.div>
