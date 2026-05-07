@@ -13,4 +13,12 @@ export const site = {
   cvPath: '/Furqan-Amir-Resume.pdf',
 }
 
+/** Degree program — matches resume (University of Lahore). */
+export const education = {
+  institution: 'University of Lahore',
+  degree: 'Bachelor of Science in Computer Science',
+  period: '2022 – Present',
+  location: 'Lahore, Pakistan',
+}
+
 export const whatsappChatUrl = `https://wa.me/${site.whatsappDigits}`

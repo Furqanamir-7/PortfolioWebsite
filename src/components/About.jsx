@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { animate, motion, useInView } from 'framer-motion'
+import { GraduationCap, MapPin } from 'lucide-react'
+import { education } from '../config/site.js'
 import { SectionLabel } from './ui/SectionLabel.jsx'
 import { GlowButton } from './ui/GlowButton.jsx'
 import { GlassCard } from './ui/GlassCard.jsx'
@@ -98,6 +100,36 @@ export function About() {
             </div>
           </div>
         </div>
+
+        <motion.div
+          className="mt-14"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5, delay: 0.08 }}
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-content-muted">
+            Education
+          </p>
+          <div className="mt-4 rounded-3xl border border-accent-glow/25 bg-gradient-to-br from-bg-secondary/90 via-bg-secondary/60 to-accent-primary/10 p-6 shadow-card backdrop-blur-xl sm:p-8">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-6">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-border-glass bg-bg-card/80 text-accent-glow shadow-glow-sm">
+                <GraduationCap className="h-7 w-7" aria-hidden />
+              </div>
+              <div className="min-w-0 flex-1 space-y-2">
+                <h3 className="font-display text-xl font-semibold text-content-primary sm:text-2xl">
+                  {education.institution}
+                </h3>
+                <p className="text-base font-medium text-content-primary/95">{education.degree}</p>
+                <p className="text-sm text-content-muted">{education.period}</p>
+                <p className="flex items-center gap-2 text-sm text-content-muted">
+                  <MapPin className="h-4 w-4 shrink-0 text-accent-glow/80" aria-hidden />
+                  {education.location}
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
