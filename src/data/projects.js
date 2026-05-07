@@ -14,7 +14,7 @@ export const projects = [
     tags: ['React', 'Next.js', 'Tailwind'],
     gradient: 'from-violet-600 via-fuchsia-600 to-indigo-900',
     liveUrl: publicSite,
-    repoUrl: 'https://github.com/furqanamir/furqan-portfolio',
+    repoUrl: 'https://github.com/Furqanamir-7/PortfolioWebsite',
   },
   {
     id: 'shopease',

@@ -8,7 +8,7 @@ export const site = {
   phoneTel: '+923262803870',
   /** Digits only, country code included (no +) — wa.me format */
   whatsappDigits: '923262803870',
-  github: 'https://github.com/furqanamir',
+  github: 'https://github.com/Furqanamir-7/PortfolioWebsite',
   /** Served from /public — regenerate with `npm run generate-cv` */
   cvPath: '/Furqan-Amir-CV.pdf',
 }
