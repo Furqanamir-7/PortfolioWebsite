@@ -39,18 +39,6 @@ export const projects = [
     repoUrl: 'https://github.com/Furqanamir-7',
   },
   {
-    id: 'equestrian-talent',
-    title: 'Equestrian Talent',
-    description:
-      'Equestrian industry platform for talent, listings, and brand presence with a refined visual system.',
-    category: 'Web Apps',
-    tags: ['WordPress', 'PHP', 'CSS'],
-    gradient: 'from-amber-900 via-yellow-900/80 to-stone-950',
-    image: '/projects/equestrian-talent.png',
-    liveUrl: 'https://equestrian-talent.com/',
-    repoUrl: 'https://github.com/Furqanamir-7',
-  },
-  {
     id: 'studentnest',
     title: 'Student Nest',
     description:
@@ -60,6 +48,18 @@ export const projects = [
     gradient: 'from-indigo-800 via-violet-900 to-slate-950',
     image: '/projects/studentnest.png',
     liveUrl: 'https://www.studentnest.site/',
+    repoUrl: 'https://github.com/Furqanamir-7',
+  },
+  {
+    id: 'equestrian-talent',
+    title: 'Equestrian Talent',
+    description:
+      'Equestrian industry platform for talent, listings, and brand presence with a refined visual system.',
+    category: 'Web Apps',
+    tags: ['WordPress', 'PHP', 'CSS'],
+    gradient: 'from-amber-900 via-yellow-900/80 to-stone-950',
+    image: '/projects/equestrian-talent.png',
+    liveUrl: 'https://equestrian-talent.com/',
     repoUrl: 'https://github.com/Furqanamir-7',
   },
 ]
