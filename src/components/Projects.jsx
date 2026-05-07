@@ -62,13 +62,27 @@ export function Projects() {
                   whileHover={{ y: -6 }}
                   className="group relative overflow-hidden rounded-3xl border border-border-glass bg-bg-secondary/60 shadow-card backdrop-blur-xl"
                 >
-                  <div
-                    className={`relative h-48 overflow-hidden bg-gradient-to-br ${project.gradient} sm:h-56`}
-                  >
-                    <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.08\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]" />
+                  <div className="relative h-48 overflow-hidden sm:h-56">
+                    <div
+                      aria-hidden
+                      className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`}
+                    />
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt=""
+                        className="absolute inset-0 z-[1] h-full w-full object-cover object-top"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none'
+                        }}
+                      />
+                    ) : null}
+                    {!project.image ? (
+                      <div className="absolute inset-0 z-[1] opacity-40 mix-blend-overlay bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.08\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]" />
+                    ) : null}
                     <motion.div
                       aria-hidden
-                      className="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 transition duration-700 group-hover:translate-x-[100%] group-hover:opacity-100"
+                      className="pointer-events-none absolute inset-0 z-[2] translate-x-[-100%] bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 transition duration-700 group-hover:translate-x-[100%] group-hover:opacity-100"
                     />
                   </div>
                   <div className="space-y-4 p-6">
