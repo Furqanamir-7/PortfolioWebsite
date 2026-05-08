@@ -1,41 +1,28 @@
-import { useRef, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Github, Loader2, Mail, Phone } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Github, Mail, MessageCircle, Phone } from 'lucide-react'
 import { site, whatsappChatUrl } from '../config/site.js'
 import { SectionLabel } from './ui/SectionLabel.jsx'
-import { GlowButton } from './ui/GlowButton.jsx'
+
+function ContactCard({ icon: Icon, eyebrow, children, delay = 0 }) {
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45, delay }}
+      className="glass-panel relative overflow-hidden rounded-3xl border border-border-glass bg-bg-secondary/50 p-6 shadow-card backdrop-blur-xl sm:p-8"
+    >
+      <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent-primary/20 blur-2xl" />
+      <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-accent-glow/35 bg-accent-primary/15 text-accent-neon">
+        <Icon size={22} strokeWidth={1.75} aria-hidden />
+      </div>
+      <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent-neon">{eyebrow}</p>
+      <div className="relative mt-3">{children}</div>
+    </motion.article>
+  )
+}
 
 export function Contact() {
-  const formRef = useRef(null)
-  const [status, setStatus] = useState('idle')
-
-  const onSubmit = (e) => {
-    e.preventDefault()
-    const form = formRef.current
-    if (!form) return
-
-    const fd = new FormData(form)
-    const name = String(fd.get('name') || '').trim()
-    const email = String(fd.get('email') || '').trim()
-    const subject = String(fd.get('subject') || '').trim()
-    const message = String(fd.get('message') || '').trim()
-
-    if (!name || !email || !message) return
-
-    const mailSubject = encodeURIComponent(subject || 'Portfolio inquiry')
-    const mailBody = encodeURIComponent(
-      [`Name: ${name}`, `Email: ${email}`, '', message].join('\n'),
-    )
-
-    setStatus('loading')
-    window.setTimeout(() => {
-      window.location.href = `mailto:${site.email}?subject=${mailSubject}&body=${mailBody}`
-      setStatus('success')
-      form.reset()
-      window.setTimeout(() => setStatus('idle'), 6000)
-    }, 650)
-  }
-
   return (
     <motion.section
       id="contact"
@@ -50,130 +37,58 @@ export function Contact() {
         <h2 className="mt-3 font-display text-3xl font-semibold text-content-primary sm:text-4xl">
           Let&apos;s build something amazing together.
         </h2>
+        <p className="mt-4 max-w-2xl text-content-muted">
+          Reach out directly — email, phone, or WhatsApp. I usually reply within a day.
+        </p>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-2">
-          <div className="space-y-6 text-content-muted">
-            <div className="flex items-start gap-3">
-              <Mail className="mt-0.5 text-accent-neon" size={20} />
-              <div>
-                <p className="text-xs uppercase tracking-widest text-content-muted">Email</p>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="text-lg text-content-primary hover:text-accent-neon"
-                >
-                  {site.email}
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <Phone className="mt-0.5 text-accent-neon" size={20} />
-              <div>
-                <p className="text-xs uppercase tracking-widest text-content-muted">Phone &amp; WhatsApp</p>
-                <a
-                  href={`tel:${site.phoneTel}`}
-                  className="block text-lg text-content-primary hover:text-accent-neon"
-                >
-                  {site.phoneDisplay}
-                </a>
-                <a
-                  href={whatsappChatUrl}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="mt-1 inline-block text-sm font-medium text-[#25d366] hover:underline"
-                >
-                  Message on WhatsApp →
-                </a>
-              </div>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-200">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
-              Open for opportunities
-            </div>
-            <div className="pt-2">
-              <motion.a
-                href={site.github}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="GitHub"
-                whileHover={{ y: -3 }}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border-glass bg-bg-card/60 text-content-muted hover:border-accent-glow/50 hover:text-accent-neon"
-              >
-                <Github size={20} />
-              </motion.a>
-            </div>
-          </div>
-
-          <div className="relative">
-            <AnimatePresence>
-              {status === 'success' && (
-                <motion.div
-                  key="ok"
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  className="absolute inset-x-0 -top-2 z-10 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-100 backdrop-blur-md"
-                >
-                  Message prepared — your mail app should open. If it did not, email{' '}
-                  <a className="font-semibold underline" href={`mailto:${site.email}`}>
-                    {site.email}
-                  </a>{' '}
-                  directly.
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            <form
-              ref={formRef}
-              onSubmit={onSubmit}
-              className="glass-panel space-y-4 rounded-3xl p-6 sm:p-8"
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <ContactCard icon={Mail} eyebrow="Email" delay={0}>
+            <a
+              href={`mailto:${site.email}`}
+              className="break-all font-display text-xl font-semibold leading-snug text-accent-neon transition hover:text-accent-glow sm:text-2xl"
             >
-              {['Name', 'Email', 'Subject'].map((label) => (
-                <label
-                  key={label}
-                  className="block text-xs font-semibold uppercase tracking-widest text-content-muted"
-                >
-                  {label}
-                  <input
-                    required={label !== 'Subject'}
-                    type={label === 'Email' ? 'email' : 'text'}
-                    name={label.toLowerCase()}
-                    className="input-glow mt-2 w-full rounded-xl border border-border-glass bg-bg-primary/60 px-4 py-3 text-sm text-content-primary placeholder:text-content-muted/60"
-                    placeholder={
-                      label === 'Name'
-                        ? 'Your name'
-                        : label === 'Email'
-                          ? 'you@example.com'
-                          : 'Project inquiry'
-                    }
-                  />
-                </label>
-              ))}
-              <label className="block text-xs font-semibold uppercase tracking-widest text-content-muted">
-                Message
-                <textarea
-                  required
-                  name="message"
-                  rows={4}
-                  className="input-glow mt-2 w-full resize-y rounded-xl border border-border-glass bg-bg-primary/60 px-4 py-3 text-sm text-content-primary placeholder:text-content-muted/60"
-                  placeholder="Tell me about your goals, timeline, and links."
-                />
-              </label>
-              <GlowButton
-                type="submit"
-                className="mt-2 w-full justify-center sm:w-auto"
-                disabled={status === 'loading'}
-              >
-                {status === 'loading' ? (
-                  <span className="inline-flex items-center gap-2">
-                    <Loader2 className="animate-spin" size={18} />
-                    Sending
-                  </span>
-                ) : (
-                  <>Send Message →</>
-                )}
-              </GlowButton>
-            </form>
+              {site.email}
+            </a>
+          </ContactCard>
+
+          <ContactCard icon={Phone} eyebrow="Phone" delay={0.06}>
+            <a
+              href={`tel:${site.phoneTel}`}
+              className="block font-display text-xl font-semibold tracking-tight text-accent-neon transition hover:text-accent-glow sm:text-2xl"
+            >
+              {site.phoneDisplay}
+            </a>
+            <p className="mt-2 text-sm text-content-muted">Tap to call</p>
+          </ContactCard>
+
+          <ContactCard icon={MessageCircle} eyebrow="WhatsApp" delay={0.12}>
+            <a
+              href={whatsappChatUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center gap-1 font-display text-xl font-semibold gradient-text transition hover:opacity-90 sm:text-2xl"
+            >
+              Message on WhatsApp →
+            </a>
+            <p className="mt-2 text-sm text-content-muted">Same number as phone — opens chat</p>
+          </ContactCard>
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent-glow/40 bg-accent-primary/15 px-4 py-2 text-sm font-medium text-accent-neon shadow-glow-sm">
+            <span className="h-2 w-2 rounded-full bg-accent-glow shadow-[0_0_12px_rgba(139,92,246,0.85)]" />
+            Open for opportunities
           </div>
+          <motion.a
+            href={site.github}
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="GitHub"
+            whileHover={{ y: -3 }}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border-glass bg-bg-card/60 text-accent-neon hover:border-accent-glow/50 hover:text-accent-glow"
+          >
+            <Github size={20} />
+          </motion.a>
         </div>
       </div>
     </motion.section>
