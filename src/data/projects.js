@@ -3,6 +3,18 @@ export const projectCategories = ['All', 'Web Apps']
 
 export const projects = [
   {
+    id: 'priceyra',
+    title: 'Priceyra',
+    description:
+      'AI shopping assistant that tracks prices across Amazon, Daraz, AliExpress, and eBay, flags fake discounts, and delivers confidence-scored Buy / Wait guidance.',
+    category: 'Web Apps',
+    tags: ['Next.js', 'React', 'AI'],
+    gradient: 'from-violet-900 via-purple-900 to-slate-950',
+    image: '/projects/priceyra.png',
+    liveUrl: 'https://priceyra.vercel.app/',
+    repoUrl: 'https://github.com/Furqanamir-7',
+  },
+  {
     id: 'bullsfc',
     title: 'Bulls FC',
     description:
