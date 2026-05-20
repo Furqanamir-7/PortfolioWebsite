@@ -63,7 +63,7 @@ export function Projects() {
                   key={project.id}
                   layout
                   whileHover={{ y: -6 }}
-                  className={`group relative overflow-hidden rounded-3xl border border-border-glass bg-bg-secondary/60 shadow-card backdrop-blur-xl ${
+                  className={`group relative overflow-hidden rounded-3xl border-2 border-accent-glow/40 bg-bg-secondary/60 shadow-[0_0_0_1px_rgba(139,92,246,0.08),0_25px_50px_-12px_rgba(0,0,0,0.45),0_0_28px_rgba(139,92,246,0.18)] ring-1 ring-inset ring-accent-glow/10 backdrop-blur-xl transition-all duration-300 hover:border-accent-glow/80 hover:shadow-[0_0_0_1px_rgba(139,92,246,0.25),0_30px_60px_-12px_rgba(0,0,0,0.55),0_0_45px_rgba(139,92,246,0.35)] hover:ring-accent-glow/30 ${
                     centerLastSolo
                       ? 'lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-[calc(50%-1rem)]'
                       : ''
