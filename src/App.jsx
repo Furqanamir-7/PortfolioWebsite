@@ -4,7 +4,6 @@ import { About } from './components/About.jsx'
 import { Skills } from './components/Skills.jsx'
 import { Services } from './components/Services.jsx'
 import { Projects } from './components/Projects.jsx'
-import { Branding } from './components/Branding.jsx'
 import { Contact } from './components/Contact.jsx'
 import { Footer } from './components/Footer.jsx'
 import { CustomCursor } from './components/ui/CustomCursor.jsx'
@@ -22,7 +21,6 @@ export default function App() {
         <Skills />
         <Services />
         <Projects />
-        <Branding />
         <Contact />
       </main>
 
