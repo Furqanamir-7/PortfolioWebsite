@@ -68,7 +68,7 @@ export function Hero() {
           </motion.h2>
 
           <motion.p variants={item} className="max-w-lg text-base text-content-muted">
-            Frontend, Backend & Full Stack Developer with 2 years of experience creating
+            Front-End, Back-End & Full Stack Developer with 2 years of experience creating
             modern websites, Shopify stores, WordPress websites, and branding content for
             social media.
           </motion.p>

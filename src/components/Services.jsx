@@ -4,12 +4,12 @@ import { SectionLabel } from './ui/SectionLabel.jsx'
 
 const services = [
   {
-    title: 'Frontend Development',
+    title: 'Front-End Development',
     description: 'High-performance interfaces with motion, accessibility, and design systems.',
     Icon: Monitor,
   },
   {
-    title: 'Backend Development',
+    title: 'Back-End Development',
     description: 'Secure APIs, data modeling, and scalable services you can ship with confidence.',
     Icon: Cog,
   },

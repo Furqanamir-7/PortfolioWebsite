@@ -26,7 +26,7 @@ line('Email: furqanamir2705@gmail.com · Phone / WhatsApp: +92 326 2803870', 10)
 y -= 16
 line('Summary', 13, bold)
 line(
-  'Frontend, backend, and full stack developer with 2+ years building modern websites, Shopify stores, WordPress themes, and social / brand creatives.',
+  'Front-End, Back-End, and Full Stack Developer with 2+ years building modern websites, Shopify stores, WordPress themes, and social / brand creatives.',
   10,
 )
 y -= 12
