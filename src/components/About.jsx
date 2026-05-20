@@ -86,19 +86,14 @@ export function About() {
             <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-accent-primary/40 via-fuchsia-500/10 to-transparent blur-2xl" />
             <div className="relative overflow-hidden rounded-[2rem] border border-border-glass bg-bg-secondary/80 p-1 shadow-card backdrop-blur-xl">
               <div className="relative aspect-square overflow-hidden rounded-[1.7rem] bg-gradient-to-br from-bg-secondary via-bg-primary to-slate-950">
-                <div className="absolute inset-6 rounded-3xl border border-dashed border-accent-glow/30" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(139,92,246,0.35),transparent_55%)]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative h-52 w-52 rounded-full border-2 border-accent-glow/60 bg-bg-card/80 shadow-glow backdrop-blur-md">
-                    <span className="absolute inset-4 rounded-full border border-white/5" />
-                    <div className="flex h-full flex-col items-center justify-center gap-2 text-center">
-                      <span className="font-display text-4xl font-extrabold gradient-text">FA</span>
-                      <span className="text-xs uppercase tracking-[0.25em] text-content-muted">
-                        Photo
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <img
+                  src="/furqan.jpg"
+                  alt="Furqan Amir"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover object-center"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg-primary/55 via-transparent to-transparent" />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-accent-glow/20" />
               </div>
             </div>
           </div>
