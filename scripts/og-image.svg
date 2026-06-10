@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <radialGradient id="glow" cx="28%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#3b1b8f" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#020007" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#020007"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="0" y="0" width="1200" height="6" fill="url(#accent)"/>
+
+  <g transform="translate(110,150) scale(8)">
+    <path d="M16 3.5 27 9.75 16 16 5 9.75Z" fill="#c4b5fd"/>
+    <path d="M5 9.75 16 16v12.5L5 22.25Z" fill="#8b5cf6"/>
+    <path d="M27 9.75 16 16v12.5l11-6.25Z" fill="#6d28d9"/>
+    <path d="M16 3.5 27 9.75 16 16 5 9.75Z" stroke="#ede9fe" stroke-width="0.6" stroke-linejoin="round" opacity="0.5"/>
+  </g>
+
+  <text x="430" y="250" font-family="Plus Jakarta Sans, Inter, Arial, sans-serif" font-size="92" font-weight="800" fill="#f8fafc" letter-spacing="-3">Furqan Amir</text>
+  <text x="432" y="318" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="600" fill="#a78bfa">Front-End, Back-End &amp; Full Stack Developer</text>
+  <text x="432" y="378" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="400" fill="#94a3b8">React &#183; Next.js &#183; Node &#183; Shopify &#183; WordPress</text>
+
+  <text x="110" y="560" font-family="JetBrains Mono, monospace" font-size="26" font-weight="500" fill="#8b5cf6">furqan-portfolio-two.vercel.app</text>
+</svg>
