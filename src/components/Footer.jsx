@@ -1,5 +1,6 @@
 import { Github } from 'lucide-react'
 import { site } from '../config/site.js'
+import { Logo } from './ui/Logo.jsx'
 
 const links = [
   { href: '#home', label: 'Home' },
@@ -15,8 +16,8 @@ export function Footer() {
     <footer className="border-t border-border-glass bg-bg-secondary/40 py-12 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div className="space-y-2">
-          <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border-glass bg-bg-card/80 font-display text-sm font-extrabold gradient-text">
-            FA
+          <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border-glass bg-bg-card/80">
+            <Logo className="h-6 w-6" />
           </div>
           <p className="max-w-xs text-sm text-content-muted">
             Full stack developer crafting cinematic web experiences, Shopify stores, and brand

@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useScrollEffect } from '../hooks/useScrollEffect.js'
 import { GlowButton } from './ui/GlowButton.jsx'
+import { Logo } from './ui/Logo.jsx'
 
 const links = [
   { href: '#home', label: 'Home' },
@@ -44,8 +45,8 @@ export function Navbar() {
             }}
             className="group flex items-center gap-2"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-border-glass bg-bg-card/80 font-display text-lg font-extrabold gradient-text shadow-glow-sm backdrop-blur-md">
-              FA
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-border-glass bg-bg-card/80 shadow-glow-sm backdrop-blur-md transition-transform group-hover:scale-105">
+              <Logo className="h-6 w-6" />
             </span>
             <span className="hidden font-display text-sm font-semibold text-content-primary sm:block">
               Furqan Amir
