@@ -3,6 +3,18 @@ export const projectCategories = ['All', 'Web Apps']
 
 export const projects = [
   {
+    id: 'playitforward',
+    title: 'Play It Forward',
+    description:
+      'Animal rescue and youth programs nonprofit site — adoptable pets, donation flows, volunteer programs, and community impact for Play It Forward.',
+    category: 'Web Apps',
+    tags: ['React', 'Next.js', 'Vercel'],
+    gradient: 'from-emerald-900 via-teal-900 to-slate-950',
+    image: '/projects/playitforward.png',
+    liveUrl: 'https://www.playitfoward.site/',
+    repoUrl: 'https://github.com/Furqanamir-7',
+  },
+  {
     id: 'priceyra',
     title: 'Priceyra',
     description:

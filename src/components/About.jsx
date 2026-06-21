@@ -8,7 +8,7 @@ import { GlassCard } from './ui/GlassCard.jsx'
 
 const stats = [
   { label: 'Years Experience', value: 1, suffix: '+' },
-  { label: 'Projects Completed', value: 5, suffix: '+' },
+  { label: 'Projects Completed', value: 7, suffix: '+' },
   { label: 'Branding Projects', value: 2, suffix: '+' },
   { label: 'Happy Clients', value: 6, suffix: '+' },
   { label: 'Technologies', value: 10, suffix: '+' },
@@ -99,6 +99,19 @@ export function About() {
           </div>
         </div>
 
+        <div className="mt-16 space-y-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.slice(0, 4).map((s) => (
+              <StatCard key={s.label} {...s} />
+            ))}
+          </div>
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
+            {stats.slice(4).map((s) => (
+              <StatCard key={s.label} {...s} />
+            ))}
+          </div>
+        </div>
+
         <motion.div
           className="mt-14"
           initial={{ opacity: 0, y: 24 }}
@@ -128,19 +141,6 @@ export function About() {
             </div>
           </div>
         </motion.div>
-
-        <div className="mt-16 space-y-4">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.slice(0, 4).map((s) => (
-              <StatCard key={s.label} {...s} />
-            ))}
-          </div>
-          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
-            {stats.slice(4).map((s) => (
-              <StatCard key={s.label} {...s} />
-            ))}
-          </div>
-        </div>
       </div>
     </motion.section>
   )
