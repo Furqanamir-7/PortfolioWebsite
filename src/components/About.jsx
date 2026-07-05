@@ -8,7 +8,7 @@ import { GlassCard } from './ui/GlassCard.jsx'
 
 const stats = [
   { label: 'Years Experience', value: 1, suffix: '+' },
-  { label: 'Projects Completed', value: 7, suffix: '+' },
+  { label: 'Projects Completed', value: 8, suffix: '+' },
   { label: 'Branding Projects', value: 2, suffix: '+' },
   { label: 'Happy Clients', value: 6, suffix: '+' },
   { label: 'Technologies', value: 10, suffix: '+' },

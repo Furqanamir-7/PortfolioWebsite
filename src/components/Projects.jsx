@@ -69,16 +69,17 @@ export function Projects() {
                       : ''
                   }`}
                 >
-                  <div className="relative flex h-52 items-center justify-center overflow-hidden px-3 py-4 sm:h-64">
+                  <div className="relative h-52 overflow-hidden bg-bg-primary/40 sm:h-60">
                     <div
                       aria-hidden
-                      className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`}
+                      className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30`}
                     />
                     {project.image ? (
                       <img
                         src={project.image}
-                        alt=""
-                        className="relative z-[1] h-full w-full max-h-[13.5rem] object-contain object-center sm:max-h-[15.5rem]"
+                        alt={`${project.title} website preview`}
+                        loading="lazy"
+                        className="relative z-[1] h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none'
                         }}
